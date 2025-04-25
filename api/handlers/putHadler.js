@@ -4,6 +4,10 @@ export async function putHandler(req, res) {
     const { id } = req.query;
     const { completed } = req.body;
     try {
+        if (!id || isNaN(id) || !Number.isInteger(id)) {
+            res.status(400).json({ error: 'Invalid ID' });
+            return;
+          }
         const result = await pool.query(
             'UPDATE todo SET completed = $1 WHERE id = $2 RETURNING *',
             [completed, id]

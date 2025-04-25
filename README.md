@@ -14,8 +14,7 @@ A simple serverless Todo application built with Node.js, PostgreSQL, and Vercel.
 
 ```
 /api
-├── index.js         // Handles GET and POST requests for the tasks
-├── [id].js          // Handles PUT and DELETE requests for a specific task by ID
+├── index.js         // Handles GET, PUT, DELETE and POST requests for the tasks
 ├── utils
 │   └── db.js        // Database connection logic
 ├── handlers
@@ -37,8 +36,8 @@ To set up and run the project locally, follow these steps:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/todo-serverless-app.git
-cd todo-serverless-app
+git clone https://github.com/Harleydiminson/todo-serverless.git
+cd todo-serverless
 ```
 
 ### 2. Install dependencies
@@ -52,7 +51,7 @@ npm install
 Create a `.env` file in the root of your project and add your database connection string:
 
 ```env
-DATABASE_URL=postgresql://retool:your-db-password@your-db-host/your-db-name?sslmode=require
+DATABASE_URL=postgresql://username:your-db-password@your-db-host/your-db-name?sslmode=require
 ```
 
 ### 4. Start the local server
@@ -73,10 +72,10 @@ You should now be able to access the API at `http://localhost:3000`.
 ### POST `/api`
 - Adds a new task to the database.
   
-### PUT `/api/[id]`
+### PUT `/api?id=[id]`
 - Updates a task's `completed` status by ID.
 
-### DELETE `/api/[id]`
+### DELETE `/api?id=[id]`
 - Deletes a task by ID.
 
 ## Deployment
