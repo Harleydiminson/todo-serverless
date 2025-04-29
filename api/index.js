@@ -4,7 +4,6 @@ import { putHandler } from './handlers/putHadler.js';
 import { deleteHandler } from './handlers/deleteHandler.js';
 
 export default async function handler(req, res) {
-  // Разрешаем CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
