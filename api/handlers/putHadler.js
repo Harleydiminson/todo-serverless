@@ -1,7 +1,7 @@
 import { pool } from '../utils/db.js'
 //PutHandler
 export async function putHandler(req, res) {
-    const { id } = req.query;
+    const id = Number(req.query.id);
     const { completed } = req.body;
     try {
         if (!id || isNaN(id) || !Number.isInteger(id)) {

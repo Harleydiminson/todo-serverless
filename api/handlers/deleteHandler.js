@@ -1,7 +1,7 @@
 import { pool } from "../utils/db.js";
 //DeleteHandler
 export async function deleteHandler(req, res) {
-  const { id } = req.query;
+  const id = Number(req.query.id);
   try {
     console.log('DeleteHandler id:', id);
     if (!id || isNaN(id) || !Number.isInteger(id)) {
